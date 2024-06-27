@@ -1,5 +1,5 @@
 class First {
-    int x, y;
+    int x = 11, y = 22;
 
     void f1() {
         System.out.println("parents function 1 is executed");
@@ -28,10 +28,16 @@ class Second extends First {
     }
 }
 
+class Third extends First {
+    void foo() {
+        System.out.println("child in foo");
+    }
+}
+
 class Inherit {
     public static void main(String[] args) {
-        Second s = new Second();
-        s.f1();
-        s.f3();
+        Third t = new Third();
+        System.out.println("execed by third class object" + t.x + " " + t.y  );
+       
     }
 }
